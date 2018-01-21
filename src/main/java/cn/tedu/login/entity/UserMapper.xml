@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<!-- namespace 命名空间 -->
+<mapper namespace="cn.tedu.login.dao.UserDAO">
+<resultMap type="cn.tedu.login.entity.User" id="empResultMap">
+	<result property="pwd" column="password"/>
+	</resultMap>
+	<select id="findByUsername" parameterType="string" resultMap="empResultMap">
+	       SELECT * FROM t_user WHERE USERNAME=#{username}
+	 </select>
+	<select id="findAll" resultType="cn.tedu.login.entity.User">
+	       SELECT * FROM t_user 
+	</select>
+	
+	
+	
+	
+	
+	
+	
+</mapper>
